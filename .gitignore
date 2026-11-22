@@ -1,0 +1,61 @@
+# Source data and generated artifacts
+1-数据文件/*
+!1-数据文件/.gitkeep
+3-代码文件/3-latent-disagreement/results/*
+!3-代码文件/3-latent-disagreement/results/.gitkeep
+3-代码文件/3-latent-disagreement/figures/*
+!3-代码文件/3-latent-disagreement/figures/.gitkeep
+
+# Data and research outputs anywhere
+*.csv
+*.tsv
+*.tab
+*.xls
+*.xlsx
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+*.sav
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.out
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+
+# Python and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_ed25519
+secrets.*
+*credentials*
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*

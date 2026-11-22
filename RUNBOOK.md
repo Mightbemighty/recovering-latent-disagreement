@@ -1,0 +1,95 @@
+# Runbook for an isolated local copy
+
+## Safety rules
+
+- Do not bulk-import the scripts. Many have no main guard and load data or write outputs on import.
+- Work in a disposable copy. Several programs overwrite fixed output names.
+- Supply inputs according to `DATA.md`; no input data are included.
+- Do not run downloads, full placebo/bootstrap batches, or CRSP processing unintentionally.
+- No command below was executed for this source release.
+
+Install package names from `requirements.txt`, then explicitly record actual versions.
+
+## Main construction and evidence
+
+Run from `3-代码文件/3-latent-disagreement/` after placing inputs:
+
+```bash
+python make_panel9.py
+python make_un_recursive.py
+python run_evidence.py --panel9 --starts 2001 1991
+python run_bw6.py --panel9 --start 2001
+python run_bw6.py --panel9 --start 1991
+python run_direct_compare.py --panel9 --start 2001
+python run_direct_compare.py --panel9 --start 1991
+python run_figures.py --panel9 --start 2001
+python run_figures.py --panel9 --start 1991
+```
+
+Check script-specific arguments before execution; some modules force `sys.argv` for their fixed specifications.
+
+## Main robustness and mechanisms
+
+```bash
+python run_horserace.py --panel9 --start 2001 --input raw
+python run_horserace.py --panel9 --start 2001 --input dpair
+python run_horserace.py --panel9 --start 2001 --input dlv
+python run_dhat_pair.py
+python run_measure_superiority.py --panel9 --test Ap
+python run_state_battery.py --panel9 --start 2001
+python run_attribution.py --panel9 --start 2001
+python run_cfdr_race.py --panel9 --start 2001
+python run_dm_subjective.py --panel9
+python run_utility_repair_p9.py
+```
+
+`run_dhat_pair.py`, `run_hlw_aligned.py`, and utility repair have excluded historical intermediate dependencies; see README. Current Table 11 uses only `run_utility_repair_p9.py`, not legacy `MetricsDef.cer` columns.
+
+## Placebo and inference batches
+
+```bash
+python run_placebo_v2.py --panel9 --B 1000 --workers 6
+python run_recession_inference.py --panel9 --start 2001
+```
+
+The placebo driver overwrites `results/placebo_v2_p9.csv` in the working copy and supports multiprocessing. These are long numerical batches and were not run for release validation.
+
+## Frequency and Supporting Information
+
+```bash
+python run_frequency.py --panel9 --start 2001
+python run_kscan.py --panel9 --start 2001
+python run_robustness.py --panel9 --start 2001
+python run_shrinkage_horserace.py --start 2001
+python run_bw6_state.py
+python run_pair_orth_u14.py
+python run_loo_attribution.py --panel9 --start 2001
+python run_post2020_attenuation.py
+python run_density_benchmark.py --panel9
+python run_sca_external.py
+python make_liv_panel.py
+python run_liv_external.py
+python run_liv_frequency.py
+python run_hlw_aligned.py
+python run_spf_timing_check.py
+```
+
+ALFRED vintage acquisition is an explicit network step:
+
+```bash
+python download_alfred_vintage.py
+python run_bw6_vintage.py --panel9 --start 2001
+```
+
+AggIVOL requires authorized CRSP inputs and substantial storage/computation:
+
+```bash
+python run_aggivol.py
+python run_state_battery.py --panel9 --start 2001
+```
+
+Do not run the CRSP step in a public or unreviewed output environment. Confirm `aggivol_monthly.csv` coverage before state-table interpretation.
+
+## Output and figure handling
+
+Outputs go to `results/`, `figures/`, the utility output directory, or documented local intermediate paths. They are excluded from the release. Utility figure filenames require a documented rename/install step to match manuscript figure names. No generated table or figure in this release is marked reproduced.
