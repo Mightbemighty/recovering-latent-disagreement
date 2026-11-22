@@ -1,7 +1,7 @@
 {
   "schema": "jof-research-source-manifest/1.0",
   "journal": "Journal of Forecasting",
-  "created_at_local": "2026-11-22T20:24:26+08:00",
+  "created_at_local": "2026-11-22T20:45:45+08:00",
   "review_model": "single-blind; regular repository URL, no anonymous mirror required",
   "license": "MIT",
   "source_files": 35,
@@ -30,9 +30,10 @@
     {
       "path": "3-代码文件/3-latent-disagreement/run_evidence.py",
       "source_sha256": "dc2c9f7555ea6fe151303a52693ba24c2c70fe4999d651199755f860f85ded34",
-      "candidate_sha256": "25013158566841ce00a8448ac5699c8eb8052e5873ea4ed5ceeb2f10579a2ec2",
+      "candidate_sha256": "1b9e2cdefff66ecd05b7c59cbc39fcbcebfe737287a649bc9f94b05ef8f0cbec",
       "changes": [
-        "Aligned docstring with current 2001 main specification"
+        "Aligned docstring with current 2001 main specification",
+        "Added exact raw-unit Spearman diagnostic without changing forecasts or estimates"
       ]
     },
     {
@@ -187,8 +188,10 @@
     {
       "path": "3-代码文件/3-latent-disagreement/make_liv_panel.py",
       "source_sha256": "8e047a3c40cf34e2d8633a70785617181b7643073088e88ca67907b8c1ad3503",
-      "candidate_sha256": "8e047a3c40cf34e2d8633a70785617181b7643073088e88ca67907b8c1ad3503",
-      "changes": []
+      "candidate_sha256": "d7b2418340ca3e4d2378684aec278de27b16d7fc269ef30c91ec5766f3dda2e0",
+      "changes": [
+        "Corrected Livingston panel-start documentation"
+      ]
     },
     {
       "path": "3-代码文件/3-latent-disagreement/run_liv_external.py",
@@ -262,7 +265,7 @@
     {
       "path": "3-代码文件/3-latent-disagreement/make_liv_panel.py",
       "bytes": 5705,
-      "sha256": "8e047a3c40cf34e2d8633a70785617181b7643073088e88ca67907b8c1ad3503"
+      "sha256": "d7b2418340ca3e4d2378684aec278de27b16d7fc269ef30c91ec5766f3dda2e0"
     },
     {
       "path": "3-代码文件/3-latent-disagreement/make_panel9.py",
@@ -331,8 +334,8 @@
     },
     {
       "path": "3-代码文件/3-latent-disagreement/run_evidence.py",
-      "bytes": 16927,
-      "sha256": "25013158566841ce00a8448ac5699c8eb8052e5873ea4ed5ceeb2f10579a2ec2"
+      "bytes": 17775,
+      "sha256": "1b9e2cdefff66ecd05b7c59cbc39fcbcebfe737287a649bc9f94b05ef8f0cbec"
     },
     {
       "path": "3-代码文件/3-latent-disagreement/run_figures.py",
@@ -431,8 +434,8 @@
     },
     {
       "path": "DATA.md",
-      "bytes": 4288,
-      "sha256": "95afcce6185ea99e87f1302587c765bd151680861d8160233a29827c52f3eb14"
+      "bytes": 4605,
+      "sha256": "cf18282403c0f6fb64a74db08b82c8ec07a6c056dcac5ebf61ccbdb40d5dff65"
     },
     {
       "path": "LICENSE",
@@ -441,8 +444,8 @@
     },
     {
       "path": "PROVENANCE.md",
-      "bytes": 2191,
-      "sha256": "3ebd0f824fd625b87b2f6a10553b0a9e8ad30329bca971cbb8b777a34a5afaf4"
+      "bytes": 2343,
+      "sha256": "46dd382680e1ba765fdafbbad95056c830fb6c1a98825540e35e302a9804ca61"
     },
     {
       "path": "README.md",
@@ -451,13 +454,13 @@
     },
     {
       "path": "RUNBOOK.md",
-      "bytes": 3597,
-      "sha256": "9a088a66302450e8772c0f185057c7ea6e53ca97f0c7791ed2a6c0a2757f7afe"
+      "bytes": 4267,
+      "sha256": "0944a8b3342df70720eaa0bcc288f78f3a69d1ad0da2dccb808fad319ab5f181"
     },
     {
       "path": "TABLE_FIGURE_MAP.md",
-      "bytes": 3375,
-      "sha256": "e78230b35a7b2dc4954975a4bf9d2613e5ac2b3e6acb3545f9b4298a15d9bb97"
+      "bytes": 3496,
+      "sha256": "75022d57edb83f7fcbdffcdcbbf1454a574f7ac12f3badc8410e866e3d664253"
     },
     {
       "path": "requirements.txt",

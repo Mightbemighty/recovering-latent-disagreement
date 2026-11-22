@@ -29,7 +29,8 @@ The following are produced or consumed locally and are not source files in this 
 
 - `3-代码文件/1-sCNNLSTM-and-meta-RSR-notebooks/all_data_qe.csv`, `SP500_h1.csv`, `mkt_RF_truncated.csv`, `USREC.csv`, `baseline_prediction.csv`, `un_data.csv`.
 - `3-代码文件/3-latent-disagreement/panel9_qe.csv`, `panel9_qe_raw.csv`, `un_data_recursive.csv`, `liv4_qe.csv`, `aggivol_monthly.csv`.
-- Historical comparison inputs such as `utility_grid_2001_p9.csv`, `cfdr_news_series.csv`, `t1_lv_channel_p9.csv`, `huang_market_measures.csv`, `preds_1991_p9.csv`, and `segment_1991_p9.csv`.
+- `make_un_recursive.py` also requires `3-代码文件/1-sCNNLSTM-and-meta-RSR-notebooks/econ_data.csv`; `run_utility_repair_p9.py` requires `SP500_monthly_1970m2_2025m12.csv` and `F-F_Research_Data_Factors_26.csv` in addition to the panel and legacy comparison inputs.
+- Historical comparison inputs such as `utility_grid_2001_p9.csv`, `cfdr_news_series.csv`, `t1_lv_channel_p9.csv`, `huang_market_measures.csv`, `huang_bridge.csv`, `huang_pls_lookahead.csv`, `preds_1991_p9.csv`, and `segment_1991_p9.csv`.
 
 Users must establish the provenance of each input independently. Successful execution with substitute or updated files is not exact reproduction of the manuscript sample.
 

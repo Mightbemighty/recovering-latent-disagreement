@@ -11,7 +11,8 @@ The 35 source files were copied from the current local working tree, not from Gi
 - Preserve relative source directories required by `__file__` path logic.
 - Localize the restricted-data root in `run_aggivol.py` and remove aggregate-panel row previews.
 - Align `run_evidence.py` documentation with the current 2001 main specification; runtime arguments remain explicit.
-- Correct the placebo driver's output-overwrite documentation.
+- Add an exact raw-unit Spearman diagnostic for the Table 4 prose without changing forecasts or estimates.
+- Correct the placebo driver's output-overwrite documentation and the Livingston panel-start documentation.
 - Add source/data/run documentation, an unpinned dependency list, output exclusions, and MIT licensing.
 
 No model, estimator, sample, forecast, inference, or utility formula was otherwise intentionally changed for this source release.

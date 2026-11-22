@@ -7,7 +7,7 @@ This is a static correspondence map, not a reproduction report. All paths below 
 | Table 1 | `make_panel9.py` | Produces raw-unit panel, not the final descriptive-statistic table export. |
 | Table 2 | `run_evidence.py` | Stylized correlations/PCA outputs; not rerun. |
 | Tables 3 and A1 | `run_evidence.py`, `run_bw6.py` | Main and 1991 variants/BW6; not rerun. |
-| Table 4 | `run_evidence.py` | Pairwise comparisons; not rerun. |
+| Table 4 and following Spearman prose | `run_evidence.py` | Pairwise comparisons; the 2001 nine-panel arm also writes raw-unit Spearman inputs and coefficient/p-value files. Not rerun. |
 | Table 5 | `run_horserace.py`, `run_evidence.py` | EW/PCA/PLS and CSR comparison; not rerun. |
 | Tables 6 and A2 | `run_direct_compare.py`, `run_figures.py` | DM/segment results; not rerun. |
 | Table 7 | `run_evidence.py`, `run_dhat_pair.py` | Level-only and fitted-side analyses; secondary T1 dependencies excluded. |
