@@ -24,6 +24,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.stats import spearmanr
 
 HERE = Path(__file__).resolve().parent
 SCNN = HERE.parent / '1-sCNNLSTM-and-meta-RSR-notebooks'
@@ -257,6 +258,20 @@ def run_start(n_train, tag, outdir):
     wins = (h1['gain'] > 0).sum()
     cg = np.corrcoef(h1['gain'], h1['abs_corr_ld'])[0, 1]
     print(f'  [{tag}] H1: d~ 胜 d = {wins}/{n_p}, corr(gain,|corr|)={cg:.3f}')
+
+    if PANEL9 and n_train == STARTS[2001]:
+        raw9 = pd.read_csv(HERE / 'panel9_qe_raw.csv')
+        assert len(raw9) == len(ad) and (pd.to_datetime(raw9['date']).values == dates.values).all()
+        raw_abs_corr = np.array([
+            abs(np.corrcoef(raw9[l].values.astype(float), raw9[d].values.astype(float))[0, 1])
+            for l, d in pairs
+        ])
+        rho, p_value = spearmanr(raw_abs_corr, h1['gain'].to_numpy())
+        h1[['gain']].assign(abs_corr_ld_raw_units=raw_abs_corr).round(6).to_csv(
+            outdir / 'h1_spearman_inputs_2001_p9.csv')
+        pd.DataFrame([{'n_questions': n_p, 'spearman_rho': rho, 'spearman_p': p_value}]).to_csv(
+            outdir / 'h1_spearman_2001_p9.csv', index=False)
+        print(f'  [{tag}] H1 raw-unit Spearman: rho={rho:.6f}, p={p_value:.6f}')
 
     # 落盘（--panel9 一律带 _p9 后缀，不覆写 21 面板锚点文件）
     outdir.mkdir(exist_ok=True)

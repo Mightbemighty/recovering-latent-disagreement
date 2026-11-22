@@ -12,8 +12,8 @@ NOTES §50/§52 变量构成归因），ECB SPF 无利率变量故未检验到�
 对齐主线 D1 口径与官方 Dispersion1 定义）。半年度→月度对齐：6 月调查 → 7 月起、
 12 月调查 → 次年 1 月起 ffill 6 个月（发布滞后保守让 1 个月，无前视）。
 变换链：rolling-72（min_periods=12）逐列 z-score（复刻 make_panel9）；面板起点
-1993-07（1992-07 起 12 行烧入）。锚点核对：个体算 lv/dis vs 官方 means / D1。
-输出：`liv4_qe.csv`（月度，1993-07–2024-12，列 l_/d_ × 4 测度）。
+1993-06（1992-06 起 12 行烧入）。锚点核对：个体算 lv/dis vs 官方 means / D1。
+输出：`liv4_qe.csv`（月度，1993-06–2024-12，列 l_/d_ × 4 测度）。
 """
 from pathlib import Path
 
